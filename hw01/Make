@@ -1,7 +1,0 @@
-all: main
-
-hw01.0: hw01.cc factorial.h
-	g++ -c -Wall -Werror hw01.cc
-	
-main: hw01.o factorial.hw01	
-	g++ -o main hw01.o
