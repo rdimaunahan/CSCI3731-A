@@ -1,5 +1,4 @@
 #include <cstdio>
-#include "swap.cc"
 #include "swap.h"
 
 int main(int argc , char** argv){
