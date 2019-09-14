@@ -1,0 +1,38 @@
+1. What is the difference between int and const int? 
+Int is an integer variable that can be accessed by a variable that points to the same memory. A const int is a constant integer variable that cannot be changed and access is in minimum.
+
+2. What is the difference between a function declaration and a function definition? 
+Function declaration is when you declare the function without stating what the function does. One example is: double sum(int n,int m);. In this statement we are only declaring that there is going to be a function called sum. Function definition is when the work in the function is stated inside the function block. Example would be: 
+double sum(int n, int m){
+return n+m
+}
+
+3. What is wrong with the following C++ code? How would you fix it? 
+int sum; 
+for(int i=0; i<1000; ++i) { sum += i; } 
+printf("Sum of 0 to 999 is %d\n", sum); 
+
+There are no error on the code. It would print the value 499500.
+
+4. What is wrong with the following code and how would you fix it? 
+int n = 1; 
+if(n = 0) { print("n is zero\n"); }
+
+The if statement uses a single equal sign which does not indicate a proper comparison to compare the value of the variable to the value of the condition. It should be n==0 so that the if statement would compare the value registered to n to the value it should be to run the if block.
+
+5. What is wrong with the following code and how would you fix it? 
+int* ptr = nullptr; 
+scanf("%d", ptr); 
+printf("You entered %d", *ptr); 
+
+There would be a segmentation fault. It will not register the user input and it will not print the value but instead it will print the directory of the value. It should be scanf("%d",&ptr) and printf("You entered %d", ptr);
+
+6. What is the difference between the * and & operators? 
+The symbol * indicated dereferences to the pointer. It returns the contents of the memory location it points to. The symbol & returns a pointer to a variable. 
+
+7. Describe what each of the following declare: 
+(a) int* a; a variable a pointing to a non-const integer data
+(b) const int b; variable b is a const integer
+(c) const int* c; variable c pointing to a const integer data
+(d) int* const d; const variable d pointing to a non-const integer value
+(e) const int* const e; a const variable e pointing to a const integer data
