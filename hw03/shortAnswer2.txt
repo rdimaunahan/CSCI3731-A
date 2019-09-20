@@ -1,0 +1,49 @@
+1. What is wrong with the following code, and how would you fix it?
+void swap(int* a, int* b) {
+int* tmp = a;
+a = b;
+b = tmp;
+} // end of swap method
+
+int* tmp = *a;
+*a = *b;
+*b = *tmp;
+
+2. Suppose you have a function that takes an array as an argument in the usual way, which is
+declared as:
+void f(int* array, int length);
+Suppose you also have an array declared as:
+int a[128];
+How would you pass a sub-array containing only the third through sixth elements of a to the
+function f?
+
+f(a+2,4)
+
+3. What is wrong with the following code and how would you fix it?
+double* allocateArray(int length) {
+double array[length];
+return array;
+}
+
+The "return array;" would go out of scope and will no longer be pointing to allocated memory.
+//do this
+double* allocateArray(int length) {
+double array = new double[length];
+return array;		//use of heap memory
+}
+//or do stack
+
+4. What is wrong with the following code, and how would you fix it?
+char string[5];
+string[0] = ’h’;
+string[1] = ’e’;
+string[2] = ’l’;
+string[3] = ’l’;
+string[4] = ’o’;
+printf("%s\n", string);
+
+Might have a problem from reading the array if it suddenly goes out of the array size
+//code of printing should be
+for(int i=0;string[i] != '/0' && i<5;i++){
+printf("%s",string[i]);
+}
