@@ -1,0 +1,14 @@
+1. What does the friend keyword do?
+-The friend keyword makes the class grant private access to the thing that comes after the keyword. It doubles as function declaration.
+2. Why should you never use using namespace std;?
+-You should not put this in a header file, because then you will import the namespace in any C++ file that includes that header. If you do that, you clobber the usefulness of namespaces, because you then can’t use that namespace to avoid name collisions.
+3. Why is memory management in C++ hard?
+-Because once you created a memory on the heap, you need to delete it or else you would get memory leak. And if you accidentally delete is more than once, your program would crash. This makes it hard if you have more than one pointer and you would need to keep track in all of and even one or two pointers pointing in the same memory would be a question of which one to delete.
+4. Describe the concept of “ownership”, as it pertains to memory management in C++.
+-Designating one particular object as the owner of the piece of data making it resposible for deleting it. Whenever you write a method that takes a pointer as an argument, you should document whether it takes ownership of the pointer.
+5. What are the three ways a class can contain objects in C++?
+-Actual object: memory for class includes memory for an object, the class then owns the object, destroying the class would also destroy the object
+-Reference: lets multiple class share the same object, the class does not own the object, destroying the class would only delete the reference
+-Pointer: object can be nullptr, class may or may not own the object
+6. What is a forward declaration and why would you use one?
+-Forward declaration refers to the beforehand declaration of the syntax or signature of an identifier, variable, function, class, etc. prior to its usage. It is used instead of including headers in headers. 
