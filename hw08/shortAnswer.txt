@@ -1,0 +1,10 @@
+1. What is the “rule of five”?
+-It is a upgraded version of rule of three. Rule of three states that if your class owns heap data, then you should supply a custom implementation for the = operator, the copy constructor, and the destructor. Both rules are rules of thumb in C++ for the building of exception-safe code and for formalizing rules on resource management.
+2. What is the difference between a copy and a move in C++?
+Copy would be a process of copying bytes of of variable to another variable since in C++ variables contain the actual object data. The con would be copying a class that has a pointer in it, the pointer gets copied but not the object. Move is a procedure that instead of just doing a copy, we are creating a new object and doing a copy. Pros would be first, the class might not have a no-argument constructor. Second, it would be inefficient, because the no-argument constructor would have to initialize the class with default values, and then = would copy new values into it.
+3. What is copy elision?
+Copy elision is a compiler optimization technique that avoids unnecessary copying of objects. It can work when you are passing a temporary to a function or method. 
+4. What is a smart pointer?
+A “smart pointer” is a class that contains an actual pointer and overloads these two operators.
+5. How can you prevent someone from copying a class you wrote?
+If you don’t supply one of the four copy or move methods, the compiler will create a default implementation for you. So to disallow one of them, you have to explicitly tell the compiler not to. Example would be "const Line& operator(const Line& line) = delete;"
