@@ -1,0 +1,21 @@
+1. What is the difference between “downcasting” and “upcasting”?
+-Downcasting: converting an object back to a subclass
+-Upcasting: referring to an object as though it were its superclass
+2. Why would you mark a method as virtual? Why wouldn’t you?
+- Marking a method virtual means that a subclass can override that method in the way you
+are used to in Java. Forgetting the virtual keyword breaks the way inheritance works.This is why we had to mark the destructor as virtual.Without it, the class would not call the right destructor.
+3. What is the difference between a dynamic cast and a static cast? Why would you use one over the other?
+-Dynamic casting works just like Java casting. It looks at the actual type of the object being cast
+and checks if it is legal to cast it to the requested type. Static casts check what they can at compile time, but do not look at the actual type of the object at runtime. Dynamic casting is sometimes maligned for being slow. This is because it has to search through the inheritance tree at runtime. Not only does this take time, but it takes different amounts of time depending on the structure of the inheritance tree. Static casting is faster, but you shouldn’t use it unless you really need that little bit of extra speed, and you are certain that you are doing a valid cast.
+4. When might you use a const cast?
+-“Const cast” is not for converting to a subclass, but for getting rid of const-ness. const is there for your safety, so it is generally a bad idea to do this. From time to time the author of that library will forget to mark a method argument as const, even though the method doesn’t modify the argument. Then if you have a const object, you would not be able to use this method, even though it doesn’t actually modify the object. A const cast can get you out of this jam. 
+5. Suppose you have a Fruit base class and a Banana subclass. Suppose you have a banana
+declared like this:
+Banana b;
+What is the difference between what happens when you pass your banana to a method declared like this:
+void eat(Fruit f);
+vs. one declared like this:
+void eat(const Fruit& f);
+
+6. What is the difference between how Java and C++ handle multiple inheritance?
+- In Java every class (except for Object) has one and only one parent class. In C++ a class can have no parent or multiple parents. We say that Java has a “universal base class” (Object), from which all other classes inherit. Java interfaces were invented to be a safe way to give you some of the functionality of multiple inheritance. In C++ you can inherit from more than one superclass, each with its own data and method implementations. 
