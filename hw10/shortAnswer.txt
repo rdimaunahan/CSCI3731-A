@@ -1,0 +1,9 @@
+1. What is the fundamental difference between how Java and C++ implement collections?
+- Java has a universal base class. Everything inherits from Object. <> would automatically cast Object to a particular type. 
+-C++ has no universal base class. <> would creates a new class for each type and no casting.
+2. What is the difference between a template and a class?
+- Class is a file that has set of codes for a specific object/type and would only work for that object only. Templates are reusable codes that takes in different type of object and create a class for each type. It lets you write generic code which can work with any data type. 
+3. What are some of the drawbacks of templates?
+-Each time you instantiate a template, the compiler creates and compiles a separate version of the class. Not only that, but the compiler has to recompile all of the class’s methods for each instantiation. So templates can make your executable files larger and can slow down compilation. 
+4. What is an iterator?
+-An iterator is a class that represents the current element of a collection and lets you step from one element to the next.
